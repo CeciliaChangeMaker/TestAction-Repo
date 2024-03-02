@@ -1,0 +1,22 @@
+name: release
+
+on: workflow_dispatch #manually trigger in github
+
+jobs:
+  release:
+   permissions:
+    contents: write
+    issues: write
+    pull-requests: write
+   runs-on: ubuntu-latest
+   steps:
+    - name: checkout
+      uses: actions/checkout@v3
+    - name: release
+      run: npx semantic-relase  #this command will run to check through the code
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}  #This token is already preconfigured in our gitgub accounts so we don't have to do anything available for all jobs for every github repo created
+        
+
+    
+      :
