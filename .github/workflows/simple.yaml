@@ -20,7 +20,7 @@ jobs:
           #print(platform.processor())
           shell: python
   run-windows-commands:
-    runs-on: 
+    runs-on: windows-latest
     steps:
       - name: Directory
         run: Get-Location
